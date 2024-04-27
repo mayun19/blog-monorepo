@@ -1,4 +1,4 @@
-# Blog App by Turborepo starter
+# Blog App
 
 This is blog app using an official starter Turborepo.
 
