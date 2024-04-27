@@ -4,7 +4,17 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "POSTGRES_URL",
+        "POSTGRES_PRISMA_URL",
+        "POSTGRES_URL_NO_SSL",
+        "POSTGRES_URL_NON_POOLING",
+        "POSTGRES_USER",
+        "POSTGRES_HOST",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_DATABASE"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -12,6 +22,20 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "blog-app#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "POSTGRES_URL",
+        "POSTGRES_PRISMA_URL",
+        "POSTGRES_URL_NO_SSL",
+        "POSTGRES_URL_NON_POOLING",
+        "POSTGRES_USER",
+        "POSTGRES_HOST",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_DATABASE"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
     }
   }
 }
