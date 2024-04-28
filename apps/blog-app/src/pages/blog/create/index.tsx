@@ -34,7 +34,7 @@ const CreateBlog = () => {
       setPost((prevPosts) => [...prevPosts, newPost]);
       router.push("/");
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
