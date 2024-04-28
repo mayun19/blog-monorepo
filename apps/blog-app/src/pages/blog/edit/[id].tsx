@@ -33,7 +33,7 @@ const BlogEditPage: FC<BlogProps> = () => {
     },
   });
 
-  const { mutate: updatePost, isPending: isLoadingUpdate } = useMutation({
+  const { mutate: updatePost } = useMutation({
     mutationFn: (newPost: FormInputPost) => {
       queryClient.invalidateQueries({
         queryKey: ["post", id],
