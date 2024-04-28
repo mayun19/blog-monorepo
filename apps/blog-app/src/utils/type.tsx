@@ -48,6 +48,7 @@ export type BlogDetail = {
   id: any;
   title: string;
   content: string;
+  createdAt?: any;
   tag: {
     id: string;
     name: string;
@@ -61,4 +62,10 @@ export type BlogProps = {
 
 export type ButtonActionProps = {
   postId: string;
+};
+
+export type BreadcrumbProps = {
+  linkHref: any;
+  contentBreadcrumb: ReactNode;
+  ariaLabel: string;
 };

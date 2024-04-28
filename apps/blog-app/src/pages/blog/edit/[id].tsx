@@ -7,6 +7,7 @@ import { SubmitHandler } from "react-hook-form";
 import { BlogProps, FormInputPost } from "@/utils/type";
 import FormPost from "@/components/FormPost";
 import Layout from "@/components/Layout";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const BlogEditPage: FC<BlogProps> = () => {
   const queryClient = useQueryClient();
@@ -39,9 +40,13 @@ const BlogEditPage: FC<BlogProps> = () => {
   const handleEdit: SubmitHandler<FormInputPost> = async (data) => {
     updatePost(data);
   };
-
   return (
     <Layout>
+      <Breadcrumb
+        linkHref={`/blog/${id}`}
+        ariaLabel="Back to blog post"
+        contentBreadcrumb="Back to blog post"
+      />
       <h2 className="text-3xl text-center">Blog Edit</h2>
       {!dataPost ? (
         <div className="flex pt-7 items-center justify-center">

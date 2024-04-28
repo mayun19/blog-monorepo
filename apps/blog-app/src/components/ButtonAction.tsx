@@ -18,7 +18,7 @@ const ButtonAction: FC<ButtonActionProps> = ({ postId }) => {
         <PencilLine /> Edit
       </Link>
       <button onClick={DeletePost} className="btn btn-error">
-        <Trash2 strokeWidth={1.5} /> Delete Post
+        <Trash2 strokeWidth={1.5} /> Delete
       </button>
     </div>
   );

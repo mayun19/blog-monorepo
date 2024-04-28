@@ -17,6 +17,7 @@ export default async function handler(
         title: true,
         content: true,
         tag: true,
+        createdAt: true,
       },
     });
     

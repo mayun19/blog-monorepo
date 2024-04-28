@@ -13,7 +13,7 @@ const Layout: React.FC<ChildProps> = ({ pageTitle, children }) => {
         justifyContent: "space-between",
       }}>
       <Head>
-        <title>by Nuya {pageTitle && `- ${pageTitle}`}</title>
+        <title>by Nuya {pageTitle ? `- ${pageTitle}` : ""}</title>
         <meta name="description" content="Blog Monorepo by Nuya" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

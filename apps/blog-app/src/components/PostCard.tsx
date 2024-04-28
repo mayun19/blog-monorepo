@@ -14,8 +14,10 @@ const PostCard: FC<PostData> = ({ post }) => {
       </figure>
       <div className="card-body px-4">
         <h1 className="card-title">{title}</h1>
-        <p className="line-clamp-5">{content}</p>
-        <div className="card-actions justify-end">
+        <p className="line-clamp-5 text-sm leading-normal text-foreground/65">
+          {content}
+        </p>
+        <div className="card-actions justify-end mt-4">
           <div className="badge badge-neutral">{tag?.name}</div>
           <Link href={`/blog/${post.id}`} className="hover:underline">
             Read more ...
