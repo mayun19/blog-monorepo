@@ -2,10 +2,10 @@ import { FC } from "react";
 import { GetServerSideProps } from "next";
 import { db } from "@/utils/prisma";
 import { BlogProps } from "@/utils/type";
+import formatDate from "@/utils/formatDate";
 import ButtonAction from "@/components/ButtonAction";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
-import formatDate from "@/utils/formatDate";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params?.id as string;
