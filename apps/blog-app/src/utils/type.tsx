@@ -8,7 +8,7 @@ export type ChildProps = {
 };
 
 export type ResponseData = {
-  tags?: { id: string; tagId: string | null }[];
+  tags?: { id: string; name: string | null }[];
   posts?: Post[];
   post?: Post[];
   message?: string;
@@ -46,9 +46,6 @@ export type FormPostProps = {
 
 export type BlogDetail = {
   id: any;
-  // params?: {
-  //   id: string | null
-  // }
   title: string;
   content: string;
   tag: {

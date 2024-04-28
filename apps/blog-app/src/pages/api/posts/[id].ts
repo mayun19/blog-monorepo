@@ -19,13 +19,14 @@ export default async function handler(
         tag: true,
       },
     });
+    
     if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
     return res.status(200).json({ post });
   } catch (error) {
     const responseData: ResponseData = {
-      message: "Failed to fetch tags data", error
+      message: "Failed to fetch data", error
     }; // Construct error response data
     res.status(500).json(responseData);
   }

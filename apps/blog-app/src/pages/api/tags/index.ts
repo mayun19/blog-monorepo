@@ -12,7 +12,7 @@ export default async function handler(
       res.status(200).json(responseData);
     } catch (error) {
       const responseData: ResponseData = {
-        message: "Failed to fetch tags data",
+        message: "Failed to fetch tags data", error
       }; // Construct error response data
       res.status(500).json(responseData);
     }

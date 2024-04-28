@@ -1,22 +1,22 @@
 "use client";
-import { FormInputPost, FormPostProps } from "@/utils/type";
-import { Tag } from "@prisma/client";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import React, { FC, useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import { Tag } from "@prisma/client";
+import { FormInputPost, FormPostProps } from "@/utils/type";
+import { useQuery } from "@tanstack/react-query";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue }) => {
   const { register, handleSubmit } = useForm<FormInputPost>({
     defaultValues: initialValue,
   });
+  
+  const [selectedTag, setSelectedTag] = useState<Tag | null>(
+    initialValue?.tag || null
+  );
 
-  const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
-
-  //fetch list tags
   const { data: tags, isLoading: isLoadingTags } = useQuery<Tag[]>({
     queryKey: ["tags"],
     queryFn: async () => {
@@ -24,6 +24,7 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue }) => {
       return response.data.tags;
     },
   });
+
   const handleTagChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const tagId = e.target.value;
     const selectedTag = tags?.find((tag) => tag.id === tagId);
@@ -31,10 +32,9 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue }) => {
   };
 
   const onSubmit = (formData: FormInputPost) => {
-    // Add the selected tag ID to the form data
     const dataWithSelectedTag: FormInputPost = {
       ...formData,
-      tag: selectedTag,
+      tag: selectedTag || initialValue?.tag,
     };
     submit(dataWithSelectedTag);
     toast.success(`Post ${isEditing ? "updated" : "created"} successfully !`, {
@@ -71,9 +71,9 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue }) => {
           className="select select-bordered w-full max-w-lg"
           {...register("tag.id", { required: true })}
           onChange={handleTagChange}
-          defaultValue="">
-          <option disabled value="">
-            Select tags
+          defaultValue={initialValue?.tag?.id || ""}>
+          <option value={initialValue?.tag?.id || ""}>
+            {initialValue?.tag?.name || "Select Tag"}
           </option>
           {tags?.map((item) => (
             <option value={item.id} key={item.id}>
