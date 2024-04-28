@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout";
-import PostCard from "@/components/PostCard";
+import { GetServerSideProps } from "next";
 import { db } from "@/utils/prisma";
 import { PostProps } from "@/utils/type";
-import { GetServerSideProps } from "next";
+import Layout from "@/components/Layout";
+import PostCard from "@/components/PostCard";
 
 export default function Home({ posts }: PostProps) {
   return (

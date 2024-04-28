@@ -1,10 +1,9 @@
-import { ButtonActionProps } from "@/utils/type";
+import React, { FC } from "react";
 import axios from "axios";
-import { PencilLine, Trash2 } from "lucide-react";
 import Link from "next/link";
 import router from "next/router";
-import React, { FC } from "react";
-// import { MyLink } from "@repo/blog-ui/src/link";
+import { PencilLine, Trash2 } from "lucide-react";
+import { ButtonActionProps } from "@/utils/type";
 
 const ButtonAction: FC<ButtonActionProps> = ({ postId }) => {
   async function DeletePost() {
@@ -21,9 +20,6 @@ const ButtonAction: FC<ButtonActionProps> = ({ postId }) => {
       <button onClick={DeletePost} className="btn btn-error">
         <Trash2 strokeWidth={1.5} /> Delete Post
       </button>
-      {/* <MyLink linkComponent={Link} href="/about">
-        Click me!
-      </MyLink> */}
     </div>
   );
 };

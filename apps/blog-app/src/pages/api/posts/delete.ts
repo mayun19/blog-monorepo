@@ -18,7 +18,6 @@ export default async function handler(
       },
     });
 
-    // Send success response
     res.status(200).json({ message: "Post deleted successfully", deletedPost });
   } catch (error) {
     console.error("Error deleting post:", error);

@@ -1,24 +1,12 @@
 "use client";
+import React, { FC } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { SubmitHandler } from "react-hook-form";
+import { BlogProps, FormInputPost } from "@/utils/type";
 import FormPost from "@/components/FormPost";
 import Layout from "@/components/Layout";
-import { db } from "@/utils/prisma";
-import { BlogProps, FormInputPost } from "@/utils/type";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
-import React, { FC } from "react";
-import { SubmitHandler } from "react-hook-form";
-
-// async function editPost(post: FormInputPost) {
-//   const response = await fetch("/api/posts/edit", {
-//     method: "PUT",
-//     body: JSON.stringify(post),
-//   });
-//   if (!response.ok) {
-//     throw new Error(response.statusText);
-//   }
-// }
 
 const BlogEditPage: FC<BlogProps> = () => {
   const queryClient = useQueryClient();

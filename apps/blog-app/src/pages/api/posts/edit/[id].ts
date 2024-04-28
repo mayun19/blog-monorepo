@@ -1,6 +1,6 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/utils/prisma";
 import { ResponseData } from "@/utils/type";
-import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,

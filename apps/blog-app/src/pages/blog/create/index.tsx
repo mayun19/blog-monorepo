@@ -1,11 +1,11 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { Post } from "@prisma/client";
+import { v4 as uuidv4 } from "uuid";
+import { FormInputPost } from "@/utils/type";
 import FormPost from "@/components/FormPost";
 import Layout from "@/components/Layout";
-import { FormInputPost } from "@/utils/type";
-import { Post } from "@prisma/client";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 async function createPost(post: FormInputPost) {
   const response = await fetch("/api/posts/create", {

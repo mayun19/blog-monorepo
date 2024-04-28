@@ -1,6 +1,6 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/utils/prisma";
 import { ResponseData } from "@/utils/type";
-import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
@@ -27,7 +27,7 @@ export default async function handler(
   } catch (error) {
     const responseData: ResponseData = {
       message: "Failed to fetch data", error
-    }; // Construct error response data
+    }; 
     res.status(500).json(responseData);
   }
 }

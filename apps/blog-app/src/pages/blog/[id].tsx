@@ -1,9 +1,9 @@
-import ButtonAction from "@/components/ButtonAction";
-import Layout from "@/components/Layout";
+import { FC } from "react";
+import { GetServerSideProps } from "next";
 import { db } from "@/utils/prisma";
 import { BlogProps } from "@/utils/type";
-import { GetServerSideProps } from "next";
-import { FC } from "react";
+import ButtonAction from "@/components/ButtonAction";
+import Layout from "@/components/Layout";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params?.id as string;

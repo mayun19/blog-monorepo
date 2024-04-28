@@ -1,6 +1,6 @@
-import { PostData } from "@/utils/type";
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+import { PostData } from "@/utils/type";
 
 const PostCard: FC<PostData> = ({ post }) => {
   const { title, content, tag } = post;

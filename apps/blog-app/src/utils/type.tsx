@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { SubmitHandler } from "react-hook-form";
 import { Tag } from "@prisma/client";
+import { SubmitHandler } from "react-hook-form";
 
 export type ChildProps = {
   pageTitle?: String;
@@ -53,6 +53,7 @@ export type BlogDetail = {
     name: string;
   };
 };
+
 export type BlogProps = {
   postContent?: BlogDetail | null;
   postId?: any;
