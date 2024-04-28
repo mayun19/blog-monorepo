@@ -39,7 +39,7 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing, initialValue }) => {
     submit(dataWithSelectedTag);
     toast.success(`Post ${isEditing ? "updated" : "created"} successfully !`, {
       position: "top-right",
-      autoClose: 7000,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
