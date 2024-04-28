@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "blog-app:dev": "turbo dev --filter=blog-app",
+    "blog-app:start": "turbo start --filter=blog-app",
+    "blog-app:build": "turbo build --filter=blog-app",
     "postinstall": "prisma generate"
   },
   "dependencies": {

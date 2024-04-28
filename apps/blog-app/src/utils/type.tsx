@@ -8,11 +8,12 @@ export type ChildProps = {
 };
 
 export type ResponseData = {
-  tags?: { id: string; name: string }[];
+  tags?: { id: string; tagId: string | null }[];
   posts?: Post[];
   post?: Post[];
   message?: string;
   updatePost?: any;
+  error?: any;
 };
 
 export type PostData = {
@@ -45,18 +46,19 @@ export type FormPostProps = {
 
 export type BlogDetail = {
   id: any;
-  params?: {
-    id: string | null
-  }
-  title: string
-  content: string
+  // params?: {
+  //   id: string | null
+  // }
+  title: string;
+  content: string;
   tag: {
     id: string;
-    name: string
-  }
-}
+    name: string;
+  };
+};
 export type BlogProps = {
-  post: BlogDetail | null;
+  postContent?: BlogDetail | null;
+  postId?: any;
 };
 
 export type ButtonActionProps = {

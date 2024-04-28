@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { ChildProps } from "@/utils/type";
 import Navbar from "./Navbar";
-import Providers from "./Providers";
 
 const Layout: React.FC<ChildProps> = ({ pageTitle, children }) => {
   return (
@@ -20,10 +19,8 @@ const Layout: React.FC<ChildProps> = ({ pageTitle, children }) => {
       </Head>
 
       <div>
-        <Providers>
-          <Navbar />
-          <div className="container h-full mt-10">{children}</div>
-        </Providers>
+        <Navbar />
+        <div className="container h-full mt-10">{children}</div>
       </div>
     </div>
   );
