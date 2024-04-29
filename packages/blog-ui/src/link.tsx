@@ -1,13 +1,12 @@
-"use client";
+import { MyLinkProps } from "./types";
 
-import { ReactNode } from "react";
 
-interface LinkProps {
-  children: ReactNode;
-  linkComponent: any;
-}
-
-export const MyLink = ({ linkComponent, children, ...props }: LinkProps) => {
-  const Component = linkComponent;
-  return <Component {...props}>{children}</Component>;
+const MyLink: React.FC<MyLinkProps> = <T extends {}>({
+  linkComponent: LinkComponent,
+  children,
+  ...props
+}: MyLinkProps & T) => {
+  return <LinkComponent {...props}>{children}</LinkComponent>;
 };
+
+export default MyLink;

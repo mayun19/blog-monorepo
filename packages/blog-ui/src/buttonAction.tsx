@@ -1,13 +1,11 @@
 "use client";
-import { ReactNode } from "react";
-interface ButtonProps {
-  children: ReactNode;
-  linkComponent: any;
-  typeButton?: "submit" | "reset" | "button";
-  actionButton: () => void;
-  buttonClassName?: string;
-}
-const ButtonAction = ({
+
+import { PencilLine } from "lucide-react";
+import MyLink from "./link";
+import { ButtonProps } from "./types";
+import { FC } from "react";
+
+export const Button = ({
   typeButton,
   actionButton,
   buttonClassName,
@@ -23,4 +21,30 @@ const ButtonAction = ({
   );
 };
 
-export default ButtonAction;
+export const ButtonAction: FC<ButtonProps>= ({
+  typeButton,
+  actionButton,
+  buttonActionWrapper,
+  buttonActionClassName,
+  buttonClassName,
+  children,
+  linkComponent,
+  linkHref,
+}) => {
+  return (
+    <div className={buttonActionWrapper}>
+      <MyLink
+        linkComponent={linkComponent}
+        href={linkHref!}
+        className={buttonActionClassName}>
+        <PencilLine /> Edit
+      </MyLink>
+      <Button
+        typeButton={typeButton}
+        actionButton={actionButton}
+        buttonClassName={buttonClassName}>
+          {children}
+      </Button>
+    </div>
+  );
+};
