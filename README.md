@@ -9,7 +9,9 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `blog-app`: a [Next.js](https://nextjs.org/) blog app
-- `@repo/blog-ui`: a stub React component library ui shared by Blog App applications
+- `@repo/blog-ui`: a stub React component library ui shared by Blog App, created by me
+- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 ## Features
 
