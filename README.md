@@ -8,7 +8,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-`@repo/blog-ui`: a stub React component library ui shared by Blog App applications
+- `blog-app`: a [Next.js](https://nextjs.org/) blog app
+- `@repo/blog-ui`: a stub React component library ui shared by Blog App applications
 
 ## Features
 
