@@ -1,6 +1,42 @@
 # Blog App
 
-This is blog app using an official starter Turborepo.
+This is blog app using an official starter Turborepo and blog-ui packages library using as Internal package (because still got problem trying to publish to npmjs).
+
+## What's inside?
+
+This Turborepo includes the following packages/apps:
+
+### Apps and Packages
+
+`@repo/blog-ui`: a stub React component library ui shared by Blog App applications
+
+## Features
+
+- Blog List
+- Detail Blog
+- Post a Blog
+- Edit Blog Post
+- Delete a Blog Post
+
+## 💻 Built With
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Daisy UI
+- Prisma
+- Tanstack React-query
+- Axios
+- React Hook Form
+- React Toastify
+- Uuid": 
+- Lucide React
+- Vercel
+
+## Screenshot App
+![image](https://github.com/mayun19/blog-monorepo/assets/16263184/25e45e15-a927-419d-9c3a-6613fb424d78)
+![image](https://github.com/mayun19/blog-monorepo/assets/16263184/1694bdf0-ba3a-4665-88de-f9ecef6ab439)
+![image](https://github.com/mayun19/blog-monorepo/assets/16263184/74e6b43b-7cb1-42b5-8715-2d5768a53d74)
 
 ## Using this example
 
@@ -9,28 +45,6 @@ Run the following command:
 ```sh
 git clone git@github.com:mayun19/blog-monorepo.git
 ```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
 
 ### Build
 
@@ -68,14 +82,3 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 ```
 npx turbo link
 ```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
